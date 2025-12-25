@@ -12,7 +12,7 @@ struct FlagsRegister    //Custom data type for flags register that avoids aciden
     bool carry;         // Bit 4
 
     uint8_t bool_to_uint(){
-        
+
     }
 
 };
@@ -25,7 +25,7 @@ struct Registers {
     uint8_t c;
     uint8_t d;
     uint8_t e;
-    uint8_t f;      // Special register for flags
+    FlagsRegister f;      // Special register for flags
     uint8_t h;
     uint8_t l;
 
@@ -34,6 +34,8 @@ struct Registers {
     /*  //Commented this out cause aparently the f register is a special register used for flags, so 
         //I believe I cannot alter it therefore rendering the virtual register "af" useless, in any case 
         //I'd rather have the code here to avoid busywork of copying it and altering var names, should I end up using it
+
+        //Also the f register has suffered custom type alterarion in order to make it error proof so these wont work without refactorinf
 
     uint16_t get_af() {
         // Mask register "a" like a+00000000; Left shift "a" 8 times (multiply by 2^8 aka 256)
