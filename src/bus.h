@@ -11,9 +11,9 @@
 inline std::array<int8_t, 65536> memory;
 
 // Reads the 8 bit word in the specified adress
-int8_t read_memory(uint16_t adress);
+int8_t read_memory(uint16_t address);
 
 // Writes an 8 bit word into the specified memory adress
-void write_memory(int8_t word, uint16_t adress);
+void write_memory(int8_t word, uint16_t address);
 
 #endif
